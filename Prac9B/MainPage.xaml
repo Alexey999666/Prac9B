@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prac9B.MainPage"
+             BackgroundImageSource="chaos.png" >
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <TableView BackgroundColor="AliceBlue" Opacity="0.5" >
+                <TableRoot>
+                    <TableSection Title="Бланк для вступления в ряды хаоса" TextColor="DarkViolet" >
+                        <EntryCell  x:Name="ecName" Keyboard="Text" Label="Имя:" Placeholder="Введите имя" LabelColor="DarkViolet" />
+                        <EntryCell x:Name="ecFamily" Label="Фамилия" Placeholder="Введите фамилию" LabelColor="DarkViolet"  />
+                        <EntryCell x:Name="ecDopName" Label="Титул или прозвище" Placeholder="Введите титул или прозвище" LabelColor="DarkViolet"  />
+                        <EntryCell x:Name="ecRas" Label="Раса" Placeholder="Введите расу" LabelColor="DarkViolet"  />
+                        <EntryCell x:Name="ecWorld" Label="Родной мир" Placeholder="Введите родной мир" LabelColor="DarkViolet"  />
+                        <EntryCell x:Name="ecFracia" Label="Прошлая фракция" Placeholder="Введите фракцию" LabelColor="DarkViolet"  />
+                        <EntryCell x:Name="ecSpeshial" Keyboard="Text" Label="Специализация" Placeholder="Введите специализацию" LabelColor="DarkViolet"  />
+                        <ViewCell>
+                            <StackLayout>
+                                <StackLayout Orientation="Horizontal" Margin="15,0,0,0" >
+                                    <Label VerticalOptions="Center" Text="Возраст: " TextColor="DarkViolet"/>
+                                    <Label x:Name="lblAge" Text="18" VerticalOptions="Center" TextColor="DarkViolet"/>
+                                    <Stepper x:Name="stAge" Minimum="0" Maximum="10000" Value="18" Increment="1" ValueChanged="stAge_ValueChanged" MinimumHeightRequest="50"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                        <SwitchCell Text="Псайкер?" On="False" OnColor="DarkViolet" x:Name="swPsayker" OnChanged="OnSwitchToggled" />
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="10,0,0,0" >
+                                <Label Text="Кому поклоняешься?" TextColor="DarkViolet" Margin="5,15,10,0"/>
+                                <Picker Title="Выберите бога" x:Name="pickerGod" SelectedIndexChanged="OnPickerSelectedIndexChanged">
+                                    <Picker.Items>
+                                        <x:String>Нургл</x:String>
+                                        <x:String>Дзинч</x:String>
+                                        <x:String>Кхорн</x:String>
+                                        <x:String>Слаанеш</x:String>
+                                        <x:String>Хаос неделимый</x:String>
+                                        <x:String>Малал</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Margin="10,0,0,0" >
+                                <Label Text="Какой служишь?" TextColor="DarkViolet" Margin="5,15,10,0"/>
+                                <Picker Title="Выберите легион" x:Name="pickerLegion" SelectedIndexChanged="OnPickerSelectedIndexChanged">
+                                    <Picker.Items>
+                                        <x:String>Дети Императора</x:String>
+                                        <x:String>Пожиратели миров</x:String>
+                                        <x:String>Гвардия смерти</x:String>
+                                        <x:String>Тысяча сынов</x:String>
+                                        <x:String>Несущие слово</x:String>
+                                        <x:String>Железные войны</x:String>
+                                        <x:String>Повелители ночи</x:String>
+                                        <x:String>Альфа легион</x:String>
+                                        <x:String>Сыны Хоруса</x:String>
+                                        <x:String>Темные механикум</x:String>
+                                    </Picker.Items>
+                                </Picker>
+                            </StackLayout>
+                        </ViewCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <StackLayout Orientation="Vertical" BackgroundColor="AliceBlue" Opacity="0.5" Padding="10">
+                <Label Text="Фото адепта:" TextColor="DarkViolet" VerticalOptions="Center" Margin="0,0,10,0" HorizontalOptions="Center"/>
+                <Image x:Name="selectedImage" HeightRequest="150" WidthRequest="150" BackgroundColor="LightGray" Aspect="AspectFill"/>
+                <Button Text="Выбрать фото" Clicked="OnPickPhoto_Click" BackgroundColor="DarkViolet" TextColor="White" VerticalOptions="Center" Margin="10,0,0,0"/>
+            </StackLayout>
+
+            <Button Text="Вступить в ряды Хаоса" Clicked="btnChaos_Click" TextColor="White" BackgroundColor="DarkViolet" FontSize="16" Opacity="0.5" HeightRequest="50"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
