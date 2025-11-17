@@ -72,7 +72,8 @@
             </StackLayout>
 
             <Button Text="Вступить в ряды Хаоса" Clicked="btnChaos_Click" TextColor="White" BackgroundColor="DarkViolet" FontSize="16" Opacity="0.5" HeightRequest="50"/>
-
+            <Button Text="Загрузить последнего адепта" Clicked="btnChaosLoad_Click" TextColor="White" Background="DarkViolet" FontSize="16" Opacity="0.5" HeightRequest="50"/>
+            
         </VerticalStackLayout>
     </ScrollView>
 

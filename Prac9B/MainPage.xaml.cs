@@ -159,5 +159,10 @@ namespace Prac9B
                 await DisplayAlert("Ошибка", $"Не удалось выбрать фото: {ex.Message}", "OK");
             }
         }
+
+        private void btnChaosLoad_Click(object sender, EventArgs e)
+        {
+            LoadSavedData();
+        }
     }
 }
